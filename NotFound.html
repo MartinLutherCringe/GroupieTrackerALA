@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Groupie Tracker</title> <!-- Titre de la page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/index.css"> <!-- Inclusion d'une feuille de style CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- Inclusion d'une police Google -->
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Groupie Tracker</h1> <!-- Titre principal de la page -->
+  </div>
+
+  <!-- The flexible grid (content) -->
+  <div class="row">
+    <div class="main">
+      <h2 class="page-heading">{{ . }}</h2> <!-- Titre dynamique de la page (variable non précisée) -->
+
+      <div class="flex-container" id="artist-container">
+        <div><a href="/">Retour A La Page D'Accueil</a></div> <!-- Lien de retour à la page d'accueil -->
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

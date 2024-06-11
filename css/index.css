@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 100px;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Petit Formal Script', cursive;
+    font-family: 'PT Serif', serif;
+  }
+
+  /* Style the body */
+  body {
+    font-family: Roboto;
+    margin: 0;
+    color: white;
+    background-color: #333;
+  }
+
+  /* Header/logo Title */
+  .header {
+    padding: 40px;
+    text-align: center;
+    background: #880D1E;
+    color: white;
+  }
+
+  /* Column container */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  hr {
+    opacity: 50%;
+  }
+
+  /* Main column */
+  .main {
+    flex: 70%;
+    padding: 20px;
+  }
+
+    /* Footer */
+  .footer {
+    margin-top: 70px;
+    padding: 20px;
+    text-align: center;
+    background: #880D1E;
+  }
+  
+  .page-heading {
+    text-align: center;
+  }
+
+  /* Fake image, just for this example */
+  .artist-image {
+    background-color: #1abc9c;
+    background-image: url("");
+    background-position: center;
+    width: 100%;
+    padding: 20px;
+    height:200px; 
+    width:200px;
+  }
+
+  .artist-image:hover {
+    background-size: 110%;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flex-container a {
+    text-decoration: none;
+    color: inherit
+  }
+
+  .artist-card {
+    margin: 10px 10px;
+    text-align: center;
+  }
+
+  .artist-info {
+    padding-top: 5px;
+    cursor: pointer;
+    width: 200px;
+  }
+
+  .artist-title {
+    font-size: 1.2em;
+  }
+
+  .artist-year {
+    font-size: 0.8em;
+    opacity: 70%;
+  }
+
+  /* Artist Page */
+
+  .artist-page-style {
+    line-height: 1.7em;
+  }
+
+  .artist-page-card {
+    margin: 10px 20px;
+  }
+
+  .artist-page-info {
+    font-weight: bold
+  }
+
+  .artist-page-info-data {
+    opacity: 80%;
+  }
+
+  .artist-page-list {
+   margin-top: auto; 
+  }
+
+  .artist-page-concert {
+    text-align: center;
+  }
+
+  .goback-link {
+    cursor: pointer;
+  }
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+
+    .row,
+    .navbar {
+      flex-direction: column;
+    }
+  }
+
+
+
+  #myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+  }
+  
+  #myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myUL li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+  }
+
+
+  button {
+    background: rgb(6,14,131);
+    background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+    border: none;
+    text-align: center;
+  }

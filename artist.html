@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Artist - {{.Artist.Name}}</title> <!-- Titre de la page avec le nom de l'artiste -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/index.css"> <!-- Inclusion d'une feuille de style CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- Inclusion d'une police Google -->
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Groupie Tracker</h1> <!-- Titre principal de la page -->
+  </div>
+
+  <!-- The flexible grid (content) -->
+  <div class="row">
+    <div class="main">
+      <h4 id="goback-link" class="goback-link"> ← Retour Au Menu </h4> <!-- Lien de retour vers le menu -->
+      <h2 class="page-heading">{{.Artist.Name}}</h2> <!-- Titre de la page avec le nom de l'artiste -->
+
+      <div class="flex-container artist-page-style" id="artist-container">
+
+        <div class="artist-page-card">
+          <div class="artist-image" id="artist-image" style="background-image: url('{{ .Artist.Image}} ');"></div> <!-- Image de l'artiste -->
+        </div>
+        <div class="artist-page-card">
+          <span class="artist-page-info">Date De Début: </span><span id="creation-date"
+            class="artist-page-info-data">{{.Artist.CreationDate}}</span><br> <!-- Date de début de l'artiste -->
+          <span class="artist-page-info">Premier Album: </span><span id="first-album"
+            class="artist-page-info-data">{{.Artist.FirstAlbum}}</span id="firstAlbum"><br> <!-- Premier album de l'artiste -->
+          <span class="artist-page-info">Membres: </span>
+          <ul id="members" class="artist-page-list">
+            {{range .Artist.Members}} <li>{{ . }}</li> {{end}} <!-- Liste des membres de l'artiste -->
+          </ul>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <h2 class="page-heading">Derniers Concerts</h2> <!-- Titre des derniers concerts -->
+
+      <div class="flex-container artist-page-style">
+
+        {{range $key, $value := .DatesLocations}} <!-- Boucle sur les dates et les lieux des concerts -->
+        <div class="artist-page-card">
+          <span class="artist-page-info"> {{ $key }} </span> <!-- Date du concert -->
+          <div class="artist-page-concert">
+            {{range $value}} <span>{{ . }}</span><br> {{end}} <!-- Lieux des concerts -->
+          </div>
+        </div>
+        {{else}} <span class="artist-page-info"> Pas De Concerts </span> <!-- Message affiché s'il n'y a pas de concerts -->
+        {{end}}
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <h2>Adrien Gonzalez, Lucas Martinez, Alexis Phan</h2> <!-- Crédits de la page -->
+  </div>
+
+</body>
+
+<script>
+var link = document.getElementById("goback-link")
+link.onclick = function() {
+    document.location.href = '/' //Redirection vers la page d'accueil 
+  }
+</script>
+
+</html>

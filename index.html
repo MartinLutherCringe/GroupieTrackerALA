@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Groupie Tracker</title> <!-- Titre de la page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/index.css"> <!-- Inclusion d'une feuille de style CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> <!-- Inclusion d'une police Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Préconnexion à l'URL des polices Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Préconnexion à l'URL des polices Google avec crossorigin -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=PT+Serif:ital@1&family=Petit+Formal+Script&display=swap" rel="stylesheet"> <!-- Inclusion de polices Google -->
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>Groupie Tracker</h1> <!-- Titre principal de la page -->
+  </div>
+
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cherchez un artiste.."> <!-- Champ de recherche d'artiste -->
+
+  <ul id="myUL">
+    <div class="row">
+      <div class="main">
+
+        <h2 class="page-heading">Suggestions</h2> <!-- Titre des suggestions -->
+        <div class="flex-container" id="artist-container">
+
+          {{ range .}} <!-- Boucle sur les données fournies -->
+          <div class="artist-card">
+            <a href="/artists?ID={{.ID}}"> <!-- Lien vers la page de l'artiste -->
+              <div class="artist-image" style="background-image: url(&quot;{{.Image}}&quot;);"></div> <!-- Image de l'artiste -->
+              <div class="artist-info">
+                <span class="artist-title">{{.Name}}</span><br> <!-- Nom de l'artiste -->
+                <span class="artist-year">{{.CreationDate}}</span> <!-- Date de création de l'artiste -->
+              </div>
+            </a>
+          </div>
+          {{else}} <span> Pas de suggestions</span> <!-- Message affiché s'il n'y a pas de suggestions -->
+          {{end}}
+
+        </div>
+      </div>
+    </div>
+  </ul>
+
+  <!-- Footer -->
+  <div class="footer">
+    <h2>Adrien Gonzalez, Lucas Martinez, Alexis Phan</h2> <!-- Crédits de la page -->
+  </div>
+</body>
+
+</html>
